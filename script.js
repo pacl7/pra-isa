@@ -14,6 +14,8 @@ envelope.addEventListener("click", () => {
     letter.style.display = "flex";
 });
 
+if (window.innerWidth > 600) {
+   
 /* Movimento botão NÃO */
 const buttonWrapper = noBtn.parentElement;
 const letterContent = document.querySelector(".letter-content");
@@ -60,6 +62,7 @@ noBtn.addEventListener("mouseover", () => {
     noBtn.parentElement.style.transform =
         `translate(${moveX}px, ${moveY}px)`;
 });
+}
 
 /* Messaggi */
 const noMessages = [
