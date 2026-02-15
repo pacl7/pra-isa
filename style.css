@@ -39,9 +39,8 @@ body {
 
 .letter-wrapper {
     position: relative;
-    width: 800px;
-    height: 800px;
-    max-width: 95vw;
+    width: 90vw;
+    max-width: 600px;
 }
 
 .window-img {
@@ -52,31 +51,34 @@ body {
 .letter-content {
     position: absolute;
 
-    top: 22%;          /* inizia sotto la fascia colorata */
+    top: 22%;
     left: 50%;
     transform: translateX(-50%);
 
-    width: 70%;
-    height: 70%;       /* altezza della parte bianca */
+    width: 80%;
+    height: 65%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     text-align: center;
 }
 
 /* Testi */
 h1 {
-    font-size: 1.6rem;
+    font-size: clamp(18px, 4vw, 26px);
     color: #d85c8c;
-    margin-bottom: 25px;
 }
 
 .cat {
-    width: 55%;
-    max-width: 200px;
+    width: 60%;
+    max-width: 180px;
+}
+
+.btn {
+    width: clamp(80px, 20vw, 130px);
 }
 
 .buttons {
@@ -94,12 +96,6 @@ h1 {
 
 .button-wrapper {
     position: relative; /* será sobrescrito para absolute via JS */
-}
-
-.btn {
-    width: 130px;
-    height: 240px;
-    display: block;
 }
 
 .btn-text {
@@ -129,4 +125,17 @@ h1 {
 @keyframes fall {
     0% { transform: translateY(-20px) rotate(0deg); }
     100% { transform: translateY(110vh) rotate(720deg); }
+}
+
+@media (max-width: 600px) {
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .letter-content {
+        height: 68%;
+    }
+
 }
